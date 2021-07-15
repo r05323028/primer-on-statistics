@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: doc/intro
+parts:
+- caption: 概述
+  chapters:
+    - file: doc/overview/statistical_inference
+- caption: 機率
+  chapters:
+    - file: doc/probability/axioms
