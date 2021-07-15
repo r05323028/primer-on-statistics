@@ -8,4 +8,11 @@
 
 ## 作者
 
-- **Sean Chang**: 資料科學家 @KKLab, KKBOX Group
+<div class='authors'>
+  <div class='author'>
+    <img class='avatar' src="https://github.com/r05323028.png?size=125">
+    <div class='name'>Sean Chang</div>
+    <div class='title'>資料科學家</div>
+    <div class='organization'>KKLab, KKBOX Group</div>
+  </div>
+</div>

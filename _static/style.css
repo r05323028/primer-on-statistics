@@ -1,0 +1,25 @@
+.avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.authors {
+    display: flex;
+    flex-direction: row;
+}
+
+.author {
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author > .name {
+    font-weight: bold;
+}
+
+.author > .organization {
+    font-style: italic;
+}
