@@ -11,3 +11,4 @@ parts:
   chapters:
     - file: doc/probability/axioms
     - file: doc/probability/random_variable
+    - file: doc/probability/theorems
