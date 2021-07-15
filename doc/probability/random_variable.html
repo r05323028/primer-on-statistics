@@ -53,6 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="重要定理" href="theorems.html" />
     <link rel="prev" title="機率公理" href="axioms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,6 +113,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    隨機變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="theorems.html">
+   重要定理
   </a>
  </li>
 </ul>
@@ -196,6 +202,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   一些隨機變數的範例
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -206,7 +225,7 @@
                 
   <div class="section" id="id1">
 <h1>隨機變數<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>隨機變數，顧名思義，他是一個<code class="docutils literal notranslate"><span class="pre">變數</span></code>而且是<code class="docutils literal notranslate"><span class="pre">隨機</span></code>的。</p>
+<p>隨機變數，顧名思義，他是一個<code class="docutils literal notranslate"><span class="pre">變數</span></code>而且是<code class="docutils literal notranslate"><span class="pre">隨機</span></code>的。每次出現的值都不一樣，而且無法百分之百確定下一次會出現什麼值。</p>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <p>給定隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，需滿足 <span class="math notranslate nohighlight">\(X: \mathcal{S} \rightarrow \mathbb{R}\)</span> ，其中 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 為樣本空間， <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> 為實數域。</p>
@@ -218,6 +237,14 @@
 <li><p><span class="math notranslate nohighlight">\(X(擲出2) = 2\)</span> …以此類推</p></li>
 </ul>
 <p>我們可以把骰子<code class="docutils literal notranslate"><span class="pre">擲出點數N</span></code>的事件映射到 <span class="math notranslate nohighlight">\(\{1, 2, 3, 4, 5, 6\}\)</span> ，因此符合隨機變數的定義。</p>
+<div class="section" id="id2">
+<h2>一些隨機變數的範例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">兩個骰子數字的加總</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(1, 1), (1, 2), ..., (6, 6)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{2, 3, ..., 12\}\)</span> ，兩個骰子的加總最小為2，最大為12。</p></li>
+<li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">投擲兩次公正銅板出現正面的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(T, T), (H, T), (T, H),  (H, H)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，其中 <span class="math notranslate nohighlight">\(T\)</span> 為 <span class="math notranslate nohighlight">\(Tail\)</span> ， <span class="math notranslate nohighlight">\(H\)</span> 為 <span class="math notranslate nohighlight">\(Head\)</span>。</p></li>
+<li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">過兩個路口遇到紅燈的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(R, R), (Y, Y), (G, G), (R, Y), (R, G), ..., (G, G)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，<span class="math notranslate nohighlight">\(R\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>、<span class="math notranslate nohighlight">\(G\)</span> 分別為紅燈、黃燈、綠燈。</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -246,6 +273,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="axioms.html" title="previous page">機率公理</a>
+    <a class='right-next' id="next-link" href="theorems.html" title="next page">重要定理</a>
 
         </div>
         
