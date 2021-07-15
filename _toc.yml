@@ -10,3 +10,4 @@ parts:
 - caption: 機率
   chapters:
     - file: doc/probability/axioms
+    - file: doc/probability/random_variable
