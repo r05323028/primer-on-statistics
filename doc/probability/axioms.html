@@ -121,6 +121,11 @@
    重要定理
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   機率分佈
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -210,21 +215,26 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   第一公理
+   樣本空間與事件
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   第二公理
+   第一公理
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   第三公理
+   第二公理
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
+   第三公理
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
    引用
   </a>
  </li>
@@ -241,17 +251,32 @@
                 
   <div class="section" id="id1">
 <h1>機率公理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>這個公理最早是由 <strong>Andrey Kolmogorov</strong> 在1933年的著作<span id="id2">[<a class="reference internal" href="#id9">Kol50</a>]</span>中提出，又稱作 <strong>Kolmogorov 公理</strong>，這個公理奠定了機率論的基礎。</p>
+<p>這個公理最早是由 <strong>Andrey Kolmogorov</strong> 在1933年的著作<span id="id2">[<a class="reference internal" href="#id10">Kol50</a>]</span>中提出，又稱作 <strong>Kolmogorov 公理</strong>，這個公理奠定了機率論的基礎。</p>
 <div class="section" id="id3">
-<h2>第一公理<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>樣本空間與事件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
-<p>對於樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 中的任一事件 <span class="math notranslate nohighlight">\(E \in \mathcal{S}\)</span> ，須滿足 <span class="math notranslate nohighlight">\(\mathbb{P}(E) &gt;= 0\)</span> 。</p>
+<ul class="simple">
+<li><p><strong>樣本空間</strong>為<strong>隨機試驗</strong>所有可能結果的<strong>集合</strong>。</p></li>
+<li><p><strong>事件</strong>為樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 的<strong>子集合</strong>。</p></li>
+</ul>
 </div>
-<p>白話來說就是，在<code class="docutils literal notranslate"><span class="pre">所有可能發生的事件</span></code>中，其中任何一個<code class="docutils literal notranslate"><span class="pre">事件</span></code>發生的機率要大於等於0。</p>
+<p>舉一些樣本空間與事件的例子:</p>
+<ul class="simple">
+<li><p>投擲一枚骰子可能出現的點數，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{1, 2, 3, 4, 5, 6\}\)</span> ，事件<strong>點數小於等於3</strong>為 <span class="math notranslate nohighlight">\(E = \{1, 2, 3\}\)</span> 。</p></li>
+<li><p>連續投擲兩枚公正銅板可能出現的結果，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(T, T), (T, H), (H, T), (H, H)\}\)</span> ，其中 <span class="math notranslate nohighlight">\(T\)</span> 為 <span class="math notranslate nohighlight">\(Tail\)</span> 、 <span class="math notranslate nohighlight">\(H\)</span> 為 <span class="math notranslate nohighlight">\(Head\)</span> ，而事件<strong>至少有一次是正面</strong> <span class="math notranslate nohighlight">\(E = \{(H, H), (H, T), (T, H)\}\)</span> 。</p></li>
+</ul>
 </div>
 <div class="section" id="id4">
-<h2>第二公理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>第一公理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>對於樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 中的任一事件 <span class="math notranslate nohighlight">\(E \subset \mathcal{S}\)</span> ，須滿足 <span class="math notranslate nohighlight">\( 0 \leq \mathbb{P}(E) \leq 1\)</span> 。</p>
+</div>
+<p>白話來說就是，在<code class="docutils literal notranslate"><span class="pre">所有可能發生的事件</span></code>中，其中任何一個<code class="docutils literal notranslate"><span class="pre">事件</span></code>發生的機率要大於等於0並且小於等於1。</p>
+</div>
+<div class="section" id="id5">
+<h2>第二公理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <p>樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 發生的機率 <span class="math notranslate nohighlight">\(\mathbb{P}(\mathcal{S}) = 1\)</span> 。</p>
@@ -259,11 +284,11 @@
 <p>第二公理意思就是說，如果有個事件他考慮了所有<strong>樣本空間</strong>裡面的<strong>事件</strong>，那他發生的機率一定是等於1。</p>
 <p>舉例來說，丟銅板的樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{Tail, Head \}\)</span> ，有一個事件叫做<code class="docutils literal notranslate"><span class="pre">出現Head或是Tail我都要</span></code>，那這個事件發生的機率就等於1。</p>
 </div>
-<div class="section" id="id5">
-<h2>第三公理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>第三公理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
-<p>任意兩兩<strong>互斥</strong>事件的可數序列 <span class="math notranslate nohighlight">\(E_1, E_2, ...\)</span> ， <span class="math notranslate nohighlight">\(\forall E_i \in \mathcal{S}\)</span> ，滿足 <span class="math notranslate nohighlight">\(\mathbb{P}(E_1 \cup E_2 \cup E_3 \cup ...) = \sum_{i=1}^{\infty} \mathbb{P}(E_i)\)</span> 。</p>
+<p>任意兩兩<strong>互斥</strong>事件的可數序列 <span class="math notranslate nohighlight">\(E_1, E_2, ...\)</span> ， <span class="math notranslate nohighlight">\(\forall E_i \subset \mathcal{S}\)</span> ，滿足 <span class="math notranslate nohighlight">\(\mathbb{P}(E_1 \cup E_2 \cup E_3 \cup ...) = \sum_{i=1}^{\infty} \mathbb{P}(E_i)\)</span> 。</p>
 </div>
 <p>第三公理是說，當事件都兩兩互斥時，他們的<code class="docutils literal notranslate"><span class="pre">聯集機率</span></code>就等於<code class="docutils literal notranslate"><span class="pre">個別的機率相加</span></code>。</p>
 <p>舉例來說，在擲骰子時，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{1, 2, 3, 4, 5, 6\}\)</span> ，裡面的事件彼此互斥，因為不可能同時擲出兩個數字。</p>
@@ -274,10 +299,10 @@
 </ul>
 <p>那<code class="docutils literal notranslate"><span class="pre">擲出1或2</span></code>的事件就是 <span class="math notranslate nohighlight">\(E_1 \cup E_2\)</span> ，而 <span class="math notranslate nohighlight">\(\mathbb{P}(E_1 \cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2) = \frac{1}{6} + \frac{1}{6}\)</span></p>
 </div>
-<div class="section" id="id6">
-<h2>引用<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p id="id7"><dl class="citation">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id2">Kol50</a></span></dt>
+<div class="section" id="id7">
+<h2>引用<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p id="id8"><dl class="citation">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">Kol50</a></span></dt>
 <dd><p>A.N. Kolmogorov. <em>Foundations of the Theory of Probability</em>. GFY BIB MA Kol. Chelsea Publishing Company, 1950. URL: <a class="reference external" href="https://books.google.com.gi/books?id=puRLAAAAMAAJ">https://books.google.com.gi/books?id=puRLAAAAMAAJ</a>.</p>
 </dd>
 </dl>

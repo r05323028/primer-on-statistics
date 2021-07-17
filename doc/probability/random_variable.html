@@ -121,6 +121,11 @@
    重要定理
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   機率分佈
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -210,16 +215,11 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   一些隨機變數的範例
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
    程式碼範例
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id3">
      連續投擲公正銅板兩次，出現正面的次數
     </a>
    </li>
@@ -250,19 +250,17 @@
 <li><p><span class="math notranslate nohighlight">\(X(擲出2) = 2\)</span> …以此類推</p></li>
 </ul>
 <p>我們可以把骰子<code class="docutils literal notranslate"><span class="pre">擲出點數N</span></code>的事件映射到 <span class="math notranslate nohighlight">\(\{1, 2, 3, 4, 5, 6\}\)</span> ，因此符合隨機變數的定義。</p>
-<div class="section" id="id2">
-<h2>一些隨機變數的範例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>一些隨機變數的範例:</p>
 <ul class="simple">
 <li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">兩個骰子數字的加總</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(1, 1), (1, 2), ..., (6, 6)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{2, 3, ..., 12\}\)</span> ，兩個骰子的加總最小為2，最大為12。</p></li>
 <li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">投擲兩次公正銅板出現正面的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(T, T), (H, T), (T, H),  (H, H)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，其中 <span class="math notranslate nohighlight">\(T\)</span> 為 <span class="math notranslate nohighlight">\(Tail\)</span> ， <span class="math notranslate nohighlight">\(H\)</span> 為 <span class="math notranslate nohighlight">\(Head\)</span>。</p></li>
 <li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">過兩個路口遇到紅燈的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(R, R), (Y, Y), (G, G), (R, Y), (R, G), ..., (G, G)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，<span class="math notranslate nohighlight">\(R\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>、<span class="math notranslate nohighlight">\(G\)</span> 分別為紅燈、黃燈、綠燈。</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>程式碼範例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>程式碼範例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>下面是一些程式碼的範例</p>
-<div class="section" id="id4">
-<h3>連續投擲公正銅板兩次，出現正面的次數<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>連續投擲公正銅板兩次，出現正面的次數<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
