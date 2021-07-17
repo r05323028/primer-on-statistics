@@ -223,6 +223,11 @@
      連續投擲公正銅板兩次，出現正面的次數
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     連續投擲兩次骰子，加總的數字
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -269,22 +274,22 @@
 <span class="n">S</span> <span class="o">=</span> <span class="p">{(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">)}</span>
 
 <span class="c1"># X: S -&gt; R</span>
-<span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]):</span>
+<span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;隨機變數 - 連續投擲公正銅板兩次，出現正面的次數</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        event (Tuple[str, str]): 樣本點</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        sum (int): 出現正面的次數</span>
+<span class="sd">        head (int): 出現正面的次數</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">event</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">trial</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span>
-            <span class="nb">sum</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">head</span> <span class="o">+=</span> <span class="mi">1</span>
     
-    <span class="k">return</span> <span class="nb">sum</span>
+    <span class="k">return</span> <span class="n">head</span>
 
 <span class="c1"># 將樣本空間映射</span>
 <span class="n">S_new</span> <span class="o">=</span> <span class="p">{</span><span class="n">X</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">S</span><span class="p">}</span>
@@ -296,6 +301,43 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 2}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>連續投擲兩次骰子，加總的數字<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+<span class="c1"># 樣本空間</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">{</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)}</span>
+
+<span class="c1"># X: S -&gt; R</span>
+<span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;隨機變數 - 連續投擲兩次骰子的點數加總</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        event (Tuple[int, int]): 連續投擲兩次骰子分別出現的點數</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        total (int): 點數加總</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+<span class="c1"># 將樣本空間映射</span>
+<span class="n">S_new</span> <span class="o">=</span> <span class="p">{</span><span class="n">X</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">S</span><span class="p">}</span>
+
+<span class="c1"># 印出隨機變數的所有可能</span>
+<span class="n">S_new</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 </pre></div>
 </div>
 </div>
