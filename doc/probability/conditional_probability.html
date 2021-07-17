@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>推論統計學</title>
+    <title>條件機率</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,10 +50,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="機率公理" href="../probability/axioms.html" />
-    <link rel="prev" title="Primer on Statistics" href="../intro.html" />
+    <link rel="next" title="機率分配" href="distribution.html" />
+    <link rel="prev" title="隨機變數" href="random_variable.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,9 +93,9 @@
   概述
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/statistical_inference.html">
    推論統計學
   </a>
  </li>
@@ -103,24 +105,24 @@
   機率
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../probability/axioms.html">
+  <a class="reference internal" href="axioms.html">
    機率公理
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../probability/random_variable.html">
+  <a class="reference internal" href="random_variable.html">
    隨機變數
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../probability/conditional_probability.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    條件機率
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../probability/distribution.html">
+  <a class="reference internal" href="distribution.html">
    機率分配
   </a>
  </li>
@@ -165,9 +167,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/doc/overview/statistical_inference.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/doc/probability/conditional_probability.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -185,7 +187,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/r05323028/primer-on-statistics/issues/new?title=Issue%20on%20page%20%2Fdoc/overview/statistical_inference.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/r05323028/primer-on-statistics/issues/new?title=Issue%20on%20page%20%2Fdoc/probability/conditional_probability.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -206,6 +208,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   統計上的獨立
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -215,7 +230,30 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>推論統計學<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>條件機率<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>給定 <span class="math notranslate nohighlight">\(\mathbb{P}(B) &gt; 0\)</span> ，則</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
+\]</div>
+</div>
+<div class="section" id="id2">
+<h2>統計上的獨立<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>若兩事件 <span class="math notranslate nohighlight">\(A\)</span> 與 <span class="math notranslate nohighlight">\(B\)</span> 相互獨立，則</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)
+\]</div>
+</div>
+<ul class="simple">
+<li><p>因為 <span class="math notranslate nohighlight">\(\mathbb{P}(A \cap B) = \mathbb{P}(A|B) \cdot \mathbb{P}(B)\)</span>，可以得到 <span class="math notranslate nohighlight">\(\mathbb{P}(A|B) \mathbb{P}(B) = \mathbb{P}(A) \mathbb{P}(B)\)</span> ，消掉兩邊的 <span class="math notranslate nohighlight">\(\mathbb{P}(B)\)</span> 以後，可以得到 <span class="math notranslate nohighlight">\(\color{red}{\mathbb{P}(A|B) = \mathbb{P}(A)}\)</span> 。</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(A|B) = \mathbb{P}(A)\)</span> 的意涵為，不論有沒有給定 <span class="math notranslate nohighlight">\(B\)</span> 都不影響 <span class="math notranslate nohighlight">\(A\)</span> 發生的機率，所以可以說兩者<strong>獨立</strong>。</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -231,7 +269,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./doc/overview"
+            path: "./doc/probability"
         },
         predefinedOutput: true
     }
@@ -243,8 +281,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Primer on Statistics</a>
-    <a class='right-next' id="next-link" href="../probability/axioms.html" title="next page">機率公理</a>
+    <a class='left-prev' id="prev-link" href="random_variable.html" title="previous page">隨機變數</a>
+    <a class='right-next' id="next-link" href="distribution.html" title="next page">機率分配</a>
 
         </div>
         

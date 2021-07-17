@@ -50,9 +50,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="隨機變數" href="random_variable.html" />
+    <link rel="prev" title="條件機率" href="conditional_probability.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -111,6 +113,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="random_variable.html">
    隨機變數
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conditional_probability.html">
+   條件機率
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -200,6 +207,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   離散型機率分配
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   連續型機率分配
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -210,6 +235,32 @@
                 
   <div class="section" id="id1">
 <h1>機率分配<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>離散型機率分配<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-probability-mass-function admonition">
+<p class="admonition-title">機率質量函數 (probability mass function)</p>
+<p>給定離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，若函數 <span class="math notranslate nohighlight">\(p_X(x) = \mathbb{P}(X = x)\)</span> 滿足</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leq p_X(x) \leq 1, \forall x \in \mathbb{R}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{x \in \mathbb{R}} p_X(x) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p_X(x \in A) = \sum_{x \in A} p_X(x)\)</span></p></li>
+</ul>
+<p>我們稱其為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的機率質量函數。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>連續型機率分配<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-probability-density-function admonition">
+<p class="admonition-title">機率密度函數 (probability density function)</p>
+<p>給定連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，若函數 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 滿足</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_X(x) \geq 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{\mathbb{R}}f_X(x)dx = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(X \in A) = \int_{A} f_X(x) dx, A \subset \mathbb{R}\)</span></p></li>
+</ul>
+<p>我們稱其為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的機率密度函數。</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -237,7 +288,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="random_variable.html" title="previous page">隨機變數</a>
+    <a class='left-prev' id="prev-link" href="conditional_probability.html" title="previous page">條件機率</a>
 
         </div>
         
