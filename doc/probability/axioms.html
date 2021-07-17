@@ -117,11 +117,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="theorems.html">
-   重要定理
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
    機率分配
   </a>
@@ -220,21 +215,55 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   第一公理
+   三大公理
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     第一公理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     第二公理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     第三公理
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
-   第二公理
+  <a class="reference internal nav-link" href="#id8">
+   重要定理
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     常用性質
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     排容原理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#de-morgan">
+     De Morgan 定理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     全機率定理
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
-   第三公理
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id12">
    引用
   </a>
  </li>
@@ -251,9 +280,10 @@
                 
   <div class="section" id="id1">
 <h1>機率公理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>這個公理最早是由 <strong>Andrey Kolmogorov</strong> 在1933年的著作<span id="id2">[<a class="reference internal" href="#id10">Kol50</a>]</span>中提出，又稱作 <strong>Kolmogorov 公理</strong>，這個公理奠定了機率論的基礎。</p>
+<p>這個公理最早是由 <strong>Andrey Kolmogorov</strong> 在1933年的著作<span id="id2">[<a class="reference internal" href="#id15">Kol50</a>]</span>中提出，又稱作 <strong>Kolmogorov 公理</strong>，這個公理奠定了機率論的基礎。</p>
 <div class="section" id="id3">
 <h2>樣本空間與事件<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>首先我們需要先定義<strong>樣本空間</strong>與<strong>事件</strong>，才能幫助我們了解三大公理。</p>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <ul class="simple">
@@ -268,15 +298,17 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>第一公理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>三大公理<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>第一公理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <p>對於樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 中的任一事件 <span class="math notranslate nohighlight">\(E \subset \mathcal{S}\)</span> ，須滿足 <span class="math notranslate nohighlight">\( 0 \leq \mathbb{P}(E) \leq 1\)</span> 。</p>
 </div>
 <p>白話來說就是，在<code class="docutils literal notranslate"><span class="pre">所有可能發生的事件</span></code>中，其中任何一個<code class="docutils literal notranslate"><span class="pre">事件</span></code>發生的機率要大於等於0並且小於等於1。</p>
 </div>
-<div class="section" id="id5">
-<h2>第二公理<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>第二公理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <p>樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 發生的機率 <span class="math notranslate nohighlight">\(\mathbb{P}(\mathcal{S}) = 1\)</span> 。</p>
@@ -284,8 +316,8 @@
 <p>第二公理意思就是說，如果有個事件他考慮了所有<strong>樣本空間</strong>裡面的<strong>事件</strong>，那他發生的機率一定是等於1。</p>
 <p>舉例來說，丟銅板的樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{Tail, Head \}\)</span> ，有一個事件叫做<code class="docutils literal notranslate"><span class="pre">出現Head或是Tail我都要</span></code>，那這個事件發生的機率就等於1。</p>
 </div>
-<div class="section" id="id6">
-<h2>第三公理<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>第三公理<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
 <p>任意兩兩<strong>互斥</strong>事件的可數序列 <span class="math notranslate nohighlight">\(E_1, E_2, ...\)</span> ， <span class="math notranslate nohighlight">\(\forall E_i \subset \mathcal{S}\)</span> ，滿足 <span class="math notranslate nohighlight">\(\mathbb{P}(E_1 \cup E_2 \cup E_3 \cup ...) = \sum_{i=1}^{\infty} \mathbb{P}(E_i)\)</span> 。</p>
@@ -299,10 +331,77 @@
 </ul>
 <p>那<code class="docutils literal notranslate"><span class="pre">擲出1或2</span></code>的事件就是 <span class="math notranslate nohighlight">\(E_1 \cup E_2\)</span> ，而 <span class="math notranslate nohighlight">\(\mathbb{P}(E_1 \cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2) = \frac{1}{6} + \frac{1}{6}\)</span></p>
 </div>
-<div class="section" id="id7">
-<h2>引用<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p id="id8"><dl class="citation">
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">Kol50</a></span></dt>
+</div>
+<div class="section" id="id8">
+<h2>重要定理<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>常用性質<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(E^C) = 1 - \mathbb{P}(E)\)</span></p></li>
+<li><p>如果 <span class="math notranslate nohighlight">\(A \subset B\)</span> ，則 <span class="math notranslate nohighlight">\(\mathbb{P}(A) \leq \mathbb{P}(B)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>排容原理<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 的事件 <span class="math notranslate nohighlight">\(A_1, A_2, ..., A_n\)</span> ，滿足</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbb{P}(\bigcup_{i=1}^n A_i) = \sum_{k=1}^n(-1)^{k-1} \sum_{\substack{I \subset \{1, ..., n\} \\ |I| = l}} \mathbb{P}(A_I)
+\end{split}\]</div>
+</div>
+<div class="figure align-default" id="id16">
+<img alt="https://upload.wikimedia.org/wikipedia/commons/4/42/Inclusion-exclusion.svg" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Inclusion-exclusion.svg" /><p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">三個事件的排容原理 (取自維基百科)</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>兩個事件的排容原理: <span class="math notranslate nohighlight">\( \mathbb{P}(A \cup B) = \color{blue}{\mathbb{P}(A) + \mathbb{P}(B)} \color{red}{- \mathbb{P}(A \cap B)} \)</span></p></li>
+<li><p>三個事件的排容原理: <span class="math notranslate nohighlight">\( \mathbb{P}(A \cup B \cup C) = \color{blue}{\mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C)} \color{red}{- \mathbb{P}(A \cap B) - \mathbb{P}(A \cap C) - \mathbb{P}(B \cap C)} \color{green}{+ \mathbb{P}(A \cap B \cap C)} \)</span></p></li>
+</ul>
+</div>
+<div class="section" id="de-morgan">
+<h3>De Morgan 定理<a class="headerlink" href="#de-morgan" title="Permalink to this headline">¶</a></h3>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}[(\bigcup_{i=1}^n A_i)^C] = \mathbb{P}(\bigcap_{i=1}^n A_i^C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}[(\bigcap_{i=1}^n A_i)^C] = \mathbb{P}(\bigcup_{i=1}^n A_i^C)\)</span></p></li>
+</ul>
+</div>
+<div class="figure align-default" id="id17">
+<img alt="https://ds055uzetaobb.cloudfront.net/brioche/uploads/zTdmOxBkan-demorgan-intersect.png?width=1200" src="https://ds055uzetaobb.cloudfront.net/brioche/uploads/zTdmOxBkan-demorgan-intersect.png?width=1200" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">De Morgan 定理以文氏圖表示 (取自 <a class="reference external" href="https://brilliant.org/wiki">https://brilliant.org/wiki</a>)</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>兩個事件:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}[(A \cup B)^C] = \mathbb{P}(A^C \cap B^C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}[(A \cap B)^C] = \mathbb{P}(A^C \cup B^C)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>全機率定理<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>假設 <span class="math notranslate nohighlight">\(\{B_1, B_2, ..., B_n\}\)</span> 為樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 的<strong>分割</strong>，則對任意事件 <span class="math notranslate nohighlight">\(A \subset \mathcal{S}\)</span>，</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{P}(A) = \sum_{i=1}^n \mathbb{P}(A \cap B_i)
+\]</div>
+<p>且因為 <span class="math notranslate nohighlight">\(\mathbb{P}(A \cap B_i) = \mathbb{P}(A | B_i) \mathbb{P}(B_i)\)</span> ，所以</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{P}(A) = \sum_{i=1}^n \mathbb{P}(A | B_i) \mathbb{P}(B_i)
+\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>引用<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p id="id13"><dl class="citation">
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id2">Kol50</a></span></dt>
 <dd><p>A.N. Kolmogorov. <em>Foundations of the Theory of Probability</em>. GFY BIB MA Kol. Chelsea Publishing Company, 1950. URL: <a class="reference external" href="https://books.google.com.gi/books?id=puRLAAAAMAAJ">https://books.google.com.gi/books?id=puRLAAAAMAAJ</a>.</p>
 </dd>
 </dl>
