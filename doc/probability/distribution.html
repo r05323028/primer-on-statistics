@@ -235,18 +235,54 @@
                 
   <div class="section" id="id1">
 <h1>機率分配<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>我們可以將機率分配想成：描述各個<strong>隨機變數</strong>的值發生機率的函數。</p>
+<p>以<code class="docutils literal notranslate"><span class="pre">連續投擲兩次公正銅板的正面次數</span></code>這個隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為例:</p>
+<ul class="simple">
+<li><p>樣本空間為 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(T, T), (T, H), (H, T), (H, H)\}\)</span></p></li>
+<li><p>隨機變數為函數 <span class="math notranslate nohighlight">\(X: \mathcal{S} \rightarrow \mathbb{R}\)</span> ，我們將樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 的<strong>事件</strong>映射到<strong>實數</strong>上，變成 <span class="math notranslate nohighlight">\(\{0, 1, 1, 2\}\)</span></p></li>
+<li><p>樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> 的樣本點發生機率都相同 (因為每次丟銅板出現正面或反面的機率都是相同的，舉例來說: <code class="docutils literal notranslate"><span class="pre">連續兩次反面</span></code>的機率會等於<code class="docutils literal notranslate"><span class="pre">第一次正面，第二次反面</span></code>的機率。)</p></li>
+<li><p>我們可以看作:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\frac{1}{4} &amp; E = (T, T) \\
+\frac{1}{4} &amp; E = (T, H) \\
+\frac{1}{4} &amp; E = (H, T) \\
+\frac{1}{4} &amp; E = (H, H)
+\end{cases}
+\underset{\implies}{映射}
+\begin{cases}
+\frac{1}{4} &amp; X = 0 \\
+\frac{1}{4} &amp; X = 1 \\
+\frac{1}{4} &amp; X = 1 \\
+\frac{1}{4} &amp; X = 2
+\end{cases}
+\underset{\implies}{合併}
+\begin{cases}
+\frac{1}{4} &amp; X = 0 \\
+\frac{1}{2} &amp; X = 1 \\
+\frac{1}{4} &amp; X = 2
+\end{cases}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>最後得到的式子，就是隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的機率分配，在<strong>離散隨機變數</strong>的情況下，又可以稱作<strong>機率質量函數</strong>。</p></li>
+</ul>
 <div class="section" id="id2">
 <h2>離散型機率分配<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-probability-mass-function admonition">
 <p class="admonition-title">機率質量函數 (probability mass function)</p>
-<p>給定離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，若函數 <span class="math notranslate nohighlight">\(p_X(x) = \mathbb{P}(X = x)\)</span> 滿足</p>
+<p>給定離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，若函數 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 滿足</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(0 \leq p_X(x) \leq 1, \forall x \in \mathbb{R}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\sum_{x \in \mathbb{R}} p_X(x) = 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p_X(x \in A) = \sum_{x \in A} p_X(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \leq f_X(x) \leq 1, \forall x \in \mathbb{R}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{x \in \mathbb{R}} f_X(x) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f_X(x \in A) = \sum_{x \in A} f_X(x)\)</span></p></li>
 </ul>
 <p>我們稱其為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的機率質量函數。</p>
 </div>
+<ul class="simple">
+<li><p>機率質量函數的值<span style="color:red"><strong>就是</strong></span>機率。</p></li>
+</ul>
 </div>
 <div class="section" id="id3">
 <h2>連續型機率分配<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
@@ -260,6 +296,9 @@
 </ul>
 <p>我們稱其為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的機率密度函數。</p>
 </div>
+<ul class="simple">
+<li><p>機率密度函數的值<span style="color:red"><strong>不是</strong></span>機率，機率需要對特定區域<strong>積分</strong>獲得。</p></li>
+</ul>
 </div>
 </div>
 
