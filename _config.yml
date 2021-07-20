@@ -4,6 +4,7 @@
 title: ""
 author: Sean Chang
 exclude_patterns: [_build, README.md]
+logo: "./logo.png"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
