@@ -277,6 +277,7 @@
 <span class="c1"># 樣本空間</span>
 <span class="n">S</span> <span class="o">=</span> <span class="p">{(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">)}</span>
 
+
 <span class="c1"># X: S -&gt; R</span>
 <span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;隨機變數 - 連續投擲公正銅板兩次，出現正面的次數</span>
@@ -292,8 +293,9 @@
     <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">event</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">trial</span> <span class="o">==</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span>
             <span class="n">head</span> <span class="o">+=</span> <span class="mi">1</span>
-    
+
     <span class="k">return</span> <span class="n">head</span>
+
 
 <span class="c1"># 將樣本空間映射</span>
 <span class="n">S_new</span> <span class="o">=</span> <span class="p">{</span><span class="n">X</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">S</span><span class="p">}</span>
@@ -320,6 +322,7 @@
 <span class="c1"># 樣本空間</span>
 <span class="n">S</span> <span class="o">=</span> <span class="p">{</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)}</span>
 
+
 <span class="c1"># X: S -&gt; R</span>
 <span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;隨機變數 - 連續投擲兩次骰子的點數加總</span>
@@ -331,6 +334,7 @@
 <span class="sd">        total (int): 點數加總</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
 
 <span class="c1"># 將樣本空間映射</span>
 <span class="n">S_new</span> <span class="o">=</span> <span class="p">{</span><span class="n">X</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">S</span><span class="p">}</span>
