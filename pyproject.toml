@@ -12,6 +12,7 @@ numpy = "^1.21.0"
 matplotlib = "^3.4.2"
 plotly = "^5.1.0"
 ipywidgets = "^7.6.3"
+more-itertools = "^8.8.0"
 
 [tool.poetry.dev-dependencies]
 jupyter = "^1.0.0"
