@@ -6,6 +6,10 @@
 
 - 在統計學課本上常常會有一些定理很難理解，希望能藉由程式碼實際執行，來幫助大家更好地理解。
 
+## 參考書籍
+
+- *A First Course in Probability, Sheldon Ross*{cite:p}`ross2014first`
+
 ## 作者
 
 <div class='authors'>
@@ -16,3 +20,9 @@
     <div class='organization'>KKLab, KKBOX Group</div>
   </div>
 </div>
+
+## 引用
+
+```{bibliography}
+:filter: docname in docnames
+```
