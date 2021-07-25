@@ -28,4 +28,4 @@ poetry run jb build .
 
 ## License
 
-[MIT](https://github.com/r05323028/primer-on-statistics/LICENSE)
+[MIT](https://github.com/r05323028/primer-on-statistics/blob/main/LICENSE)
