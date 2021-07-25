@@ -21,6 +21,18 @@
   </div>
 </div>
 
+## 贊助者
+
+<div class='sponsors'>
+  <div class='sponsor'>
+    <a href="https://www.kklab.com">
+      <img class='sp-logo' src="https://static.wixstatic.com/media/4fb308_ee3fec375e4c4bc59ed55a41fd25d851~mv2.png/v1/fill/w_213,h_65,al_c,q_85,usm_0.66_1.00_0.01/KKLab_Logo.webp">
+    </a>
+    <div class='sp-name'>KKLab</div>
+    <div class='sp-location'>Taipei, Taiwan</div>
+  </div>
+</div>
+
 ## 引用
 
 ```{bibliography}
