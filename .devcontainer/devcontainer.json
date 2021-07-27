@@ -7,7 +7,7 @@
         "context": "..",
         "args": {
             // Update 'VARIANT' to pick a Python version: 3, 3.6, 3.7, 3.8, 3.9
-            "VARIANT": "3.7",
+            "VARIANT": "3.8",
             // Options
             "INSTALL_NODE": "false",
             "NODE_VERSION": "lts/*"
@@ -25,13 +25,13 @@
 
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-		"ms-python.python",
-		"yzhang.markdown-all-in-one",
-		"esbenp.prettier-vscode",
-		"james-yu.latex-workshop",
-		"bungcip.better-toml",
-		"redhat.vscode-yaml"
-	],
+        "ms-python.python",
+        "yzhang.markdown-all-in-one",
+        "esbenp.prettier-vscode",
+        "james-yu.latex-workshop",
+        "bungcip.better-toml",
+        "redhat.vscode-yaml"
+    ],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
