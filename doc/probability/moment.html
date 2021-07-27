@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>條件機率</title>
+    <title>期望值、變異數、偏峰態與動差</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,12 +55,11 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="canonical" href="https://r05323028.github.io/primer-on-statistics/doc/probability/conditional_probability.html" />
+    <link rel="canonical" href="https://r05323028.github.io/primer-on-statistics/doc/probability/moment.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="機率分配" href="distribution.html" />
-    <link rel="prev" title="隨機變數" href="random_variable.html" />
+    <link rel="prev" title="機率分配" href="distribution.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -123,8 +122,8 @@
    隨機變數
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="conditional_probability.html">
    條件機率
   </a>
  </li>
@@ -133,8 +132,8 @@
    機率分配
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="moment.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    期望值、變異數、偏峰態與動差
   </a>
  </li>
@@ -179,7 +178,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/doc/probability/conditional_probability.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/doc/probability/moment.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -199,7 +198,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/r05323028/primer-on-statistics/issues/new?title=Issue%20on%20page%20%2Fdoc/probability/conditional_probability.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/r05323028/primer-on-statistics/issues/new?title=Issue%20on%20page%20%2Fdoc/probability/moment.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -227,7 +226,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   機率上的獨立
+   期望值
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   變異數
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   偏度
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   峰度
   </a>
  </li>
 </ul>
@@ -242,29 +256,42 @@
               <div>
                 
   <div class="section" id="id1">
-<h1>條件機率<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="admonition- admonition">
-<p class="admonition-title">定義</p>
-<p>給定 <span class="math notranslate nohighlight">\(\mathbb{P}(B) &gt; 0\)</span> ，則</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
-\]</div>
-</div>
+<h1>期望值、變異數、偏峰態與動差<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>機率上的獨立<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>期望值<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">離散型隨機變數</label><div class="tab-content docutils">
 <div class="admonition- admonition">
 <p class="admonition-title">定義</p>
-<p>若兩事件 <span class="math notranslate nohighlight">\(A\)</span> 與 <span class="math notranslate nohighlight">\(B\)</span> 相互獨立，則</p>
+<p>離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，其期望值為</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)
+\mathbb{E}(X) = \sum_{x \in R_X} x \cdot f_X(x)
 \]</div>
+<p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的值域，而 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的<strong>機率質量函數</strong>。</p>
 </div>
-<ul class="simple">
-<li><p>因為 <span class="math notranslate nohighlight">\(\mathbb{P}(A \cap B) = \mathbb{P}(A|B) \cdot \mathbb{P}(B)\)</span>，可以得到 <span class="math notranslate nohighlight">\(\mathbb{P}(A|B) \mathbb{P}(B) = \mathbb{P}(A) \mathbb{P}(B)\)</span> ，消掉兩邊的 <span class="math notranslate nohighlight">\(\mathbb{P}(B)\)</span> 以後，可以得到 <span class="math notranslate nohighlight">\(\color{red}{\mathbb{P}(A|B) = \mathbb{P}(A)}\)</span> 。</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(A|B) = \mathbb{P}(A)\)</span> 的意涵為，不論有沒有給定 <span class="math notranslate nohighlight">\(B\)</span> 都不影響 <span class="math notranslate nohighlight">\(A\)</span> 發生的機率，所以可以說兩者<strong>獨立</strong>。</p></li>
-</ul>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">連續型隨機變數</label><div class="tab-content docutils">
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，其期望值為</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}(X) = \int_{x \in R_X} x f_X(x) dx
+\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的值域，而 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的<strong>機率密度函數</strong>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>變異數<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id4">
+<h2>偏度<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>峰度<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -293,8 +320,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="random_variable.html" title="previous page">隨機變數</a>
-    <a class='right-next' id="next-link" href="distribution.html" title="next page">機率分配</a>
+    <a class='left-prev' id="prev-link" href="distribution.html" title="previous page">機率分配</a>
 
         </div>
         
