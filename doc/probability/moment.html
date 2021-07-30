@@ -248,6 +248,18 @@
   <a class="reference internal nav-link" href="#id6">
    動差
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     主動差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     動差母函數
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -374,6 +386,38 @@ K(X)  = \int_{x \in R_X} (x - \mathbb{E}(X))^4 f_X(x) dx
 </div>
 <div class="section" id="id6">
 <h2>動差<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的n階動差，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_n = \int_{x \in R_X} (x - c)^n f_X(x) dx
+\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的值域， <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的機率密度函數。</p>
+</div>
+<div class="section" id="id7">
+<h3>主動差<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>主動差就是動差函數的 <span class="math notranslate nohighlight">\(c\)</span> 以隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的期望值 <span class="math notranslate nohighlight">\(\mathbb{E}(X)\)</span> 取代。</p>
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的k階主動差，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_k = \int_{x \in R_X} (x - \mathbb{E}(X))^k f_X(x) dx
+\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的值域， <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的機率密度函數。</p>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k = 0\)</span> 時， <span class="math notranslate nohighlight">\(\mu_0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 1\)</span> 時， <span class="math notranslate nohighlight">\(\mu_1 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 2\)</span> 時， <span class="math notranslate nohighlight">\(\mu_2 = Var(X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 3\)</span> 時， <span class="math notranslate nohighlight">\(\mu_3\)</span> 可用於定義偏度</p></li>
+<li><p><span class="math notranslate nohighlight">\(k = 4\)</span> 時， <span class="math notranslate nohighlight">\(\mu_4\)</span> 可用於定義峰度</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>動差母函數<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
