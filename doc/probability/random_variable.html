@@ -220,31 +220,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   程式碼範例
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     連續投擲公正銅板兩次，出現正面的次數
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     連續投擲兩次骰子，加總的數字
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -273,14 +248,11 @@
 <li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">投擲兩次公正銅板出現正面的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(T, T), (H, T), (T, H),  (H, H)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，其中 <span class="math notranslate nohighlight">\(T\)</span> 為 <span class="math notranslate nohighlight">\(Tail\)</span> ， <span class="math notranslate nohighlight">\(H\)</span> 為 <span class="math notranslate nohighlight">\(Head\)</span>。</p></li>
 <li><p>隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 為<code class="docutils literal notranslate"><span class="pre">過兩個路口遇到紅燈的次數</span></code>，樣本空間 <span class="math notranslate nohighlight">\(\mathcal{S} = \{(R, R), (Y, Y), (G, G), (R, Y), (R, G), ..., (G, G)\}\)</span> 能夠被映射到 <span class="math notranslate nohighlight">\(\{0, 1, 2\}\)</span>，<span class="math notranslate nohighlight">\(R\)</span>、<span class="math notranslate nohighlight">\(Y\)</span>、<span class="math notranslate nohighlight">\(G\)</span> 分別為紅燈、黃燈、綠燈。</p></li>
 </ul>
-<div class="section" id="id2">
-<h2>程式碼範例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>下面是一些程式碼的範例</p>
-<div class="section" id="id3">
-<h3>連續投擲公正銅板兩次，出現正面的次數<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 連續投擲公正銅板兩次，出現正面的次數</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
 
 <span class="c1"># 樣本空間</span>
 <span class="n">S</span> <span class="o">=</span> <span class="p">{(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">)}</span>
@@ -319,12 +291,10 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>連續投擲兩次骰子，加總的數字<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 連續投擲兩次骰子，加總的數字</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
 
 <span class="c1"># 樣本空間</span>
@@ -355,8 +325,6 @@
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
