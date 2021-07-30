@@ -236,12 +236,17 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   偏度
+   偏態
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   峰度
+   峰態
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   動差
   </a>
  </li>
 </ul>
@@ -266,7 +271,7 @@
 <p>離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，其期望值為</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{E}(X) = \sum_{x \in R_X} x \cdot f_X(x)
+\mu = \mathbb{E}(X) = \sum_{x \in R_X} x \cdot f_X(x)
 \]</div>
 <p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的值域，而 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的<strong>機率質量函數</strong>。</p>
 </div>
@@ -277,7 +282,7 @@
 <p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，其期望值為</p>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{E}(X) = \int_{x \in R_X} x f_X(x) dx
+\mu = \mathbb{E}(X) = \int_{x \in R_X} x f_X(x) dx
 \]</div>
 <p>其中 <span class="math notranslate nohighlight">\(R_X\)</span> 為隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的值域，而 <span class="math notranslate nohighlight">\(f_X(x)\)</span> 為 <span class="math notranslate nohighlight">\(X\)</span> 的<strong>機率密度函數</strong>。</p>
 </div>
@@ -293,7 +298,7 @@
 <p>離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> ，其變異數為</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-Var(X) &amp; = \sum_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) \\
+\sigma^2 = Var(X) &amp; = \sum_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) \\
 &amp; = \sum_{x \in R_X} x^2 f_X(x) - \mathbb{E}(X)^2 \\
 &amp; = \mathbb{E}(X^2) - \mathbb{E}(X)^2
 \end{split}\]</div>
@@ -307,7 +312,7 @@ Var(X) &amp; = \sum_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) \\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-Var(X) &amp; = \int_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) dx \\
+\sigma^2 = Var(X) &amp; = \int_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) dx \\
 &amp; = \int_{x \in R_X} x^2 f_X(x) dx - \mathbb{E}(X)^2 \\
 &amp; = \mathbb{E}(X^2) - \mathbb{E}(X)^2
 \end{split}
@@ -318,10 +323,57 @@ Var(X) &amp; = \int_{x \in R_X} (x - \mathbb{E}(X))^2 f_X(x) dx \\
 </div>
 </div>
 <div class="section" id="id4">
-<h2>偏度<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>偏態<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">離散型隨機變數</label><div class="tab-content docutils">
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的峰態，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+S(X)  = \sum_{x \in R_X} (x - \mathbb{E}(X))^3 f_X(x)
+\]</div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">連續型隨機變數</label><div class="tab-content docutils">
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的峰態，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+S(X)  = \int_{x \in R_X} (x - \mathbb{E}(X))^3 f_X(x) dx
+\]</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id5">
-<h2>峰度<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>峰態<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">離散型隨機變數</label><div class="tab-content docutils">
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>離散型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的峰態，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+K(X)  = \sum_{x \in R_X} (x - \mathbb{E}(X))^4 f_X(x)
+\]</div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">連續型隨機變數</label><div class="tab-content docutils">
+<div class="admonition- admonition">
+<p class="admonition-title">定義</p>
+<p>連續型隨機變數 <span class="math notranslate nohighlight">\(X\)</span> 的峰態，其定義為</p>
+<div class="math notranslate nohighlight">
+\[
+K(X)  = \int_{x \in R_X} (x - \mathbb{E}(X))^4 f_X(x) dx
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>動差<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
