@@ -14,6 +14,7 @@ parts:
           - file: doc/probability/conditional_probability
           - file: doc/probability/distribution
           - file: doc/probability/moment
+          - file: doc/probability/lln_and_clt
     - caption: 推論統計學
       chapters:
           - file: doc/statistics/hypothesis_testing
